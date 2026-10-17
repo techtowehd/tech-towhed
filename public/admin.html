@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — Tech Towhed</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%237C5CFC'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+<canvas id="bg-canvas" aria-hidden="true"></canvas>
+<div class="ambient" aria-hidden="true"><div class="blob b1"></div><div class="blob b2"></div></div>
+
+<!-- ============ LOGIN ============ -->
+<div id="loginView" class="login-wrap" style="display:none">
+  <div class="card login-card">
+    <span class="brand-mark" style="width:52px;height:52px;margin-bottom:18px"><svg viewBox="0 0 24 24" fill="none" width="28" height="28"><path d="M5 19 L10 5h2.4L8 15.6h6.4V19H5z" fill="#fff"/><path d="M13.5 19L18.5 5h-2.4L12.5 15.6H8.6V19h4.9z" fill="#fff" opacity=".6"/></svg></span>
+    <h1>Admin Login</h1>
+    <p>Sign in to manage your Tech Towhed website.</p>
+    <form id="loginForm">
+      <div class="field"><label>Username</label><input name="username" type="text" autocomplete="username" required></div>
+      <div class="field"><label>Password</label><input name="password" type="password" autocomplete="current-password" required></div>
+      <button class="btn btn-primary" type="submit" style="width:100%" id="loginBtn">Sign In</button>
+      <div class="form-msg" id="loginMsg"></div>
+    </form>
+    <a href="/" class="back-link">← Back to website</a>
+  </div>
+</div>
+
+<!-- ============ APP ============ -->
+<div id="appView" style="display:none">
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="/" style="padding:4px 6px"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" width="20" height="20"><path d="M5 19 L10 5h2.4L8 15.6h6.4V19H5z" fill="#fff"/><path d="M13.5 19L18.5 5h-2.4L12.5 15.6H8.6V19h4.9z" fill="#fff" opacity=".6"/></svg></span><span>Tech Towhed<small>Admin</small></span></a>
+    <nav class="side-nav" id="sideNav"></nav>
+    <div class="side-foot">
+      <a href="/" target="_blank" class="side-link">View website ↗</a>
+      <button class="side-link" id="logoutBtn" style="width:100%;text-align:left;background:none;border:none;color:inherit;font-size:inherit">Log out</button>
+    </div>
+  </aside>
+  <div class="main">
+    <header class="topbar">
+      <button class="icon-btn" id="sideToggle" aria-label="Toggle menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      <h2 id="pageTitle">Overview</h2>
+      <span class="user-chip" id="userChip"></span>
+    </header>
+    <main class="content" id="pageContent"><div class="skel" style="min-height:300px"></div></main>
+  </div>
+</div>
+
+<!-- ============ MODAL ============ -->
+<div class="modal-backdrop" id="modalBackdrop" style="display:none">
+  <div class="card modal" role="dialog" aria-modal="true">
+    <div class="modal-head"><h3 id="modalTitle">Edit</h3><button class="icon-btn" id="modalClose" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="/js/admin.js" defer></script>
+</body>
+</html>
