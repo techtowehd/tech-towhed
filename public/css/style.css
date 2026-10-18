@@ -319,6 +319,17 @@ section.block { padding: 96px 0; position: relative; }
 .work-body .results { font-size: 0.88rem; color: var(--text-2); background: var(--glass-strong); border: 1px solid var(--glass-border-soft); border-radius: 12px; padding: 10px 14px; }
 .work-body .results b { color: var(--success); }
 
+/* ---------- case studies ---------- */
+.case-card { display: grid; grid-template-columns: 1fr 1fr; gap: 0; padding: 0; overflow: hidden; }
+.case-media { min-height: 300px; background: linear-gradient(135deg, rgba(124,92,252,.28), rgba(54,217,255,.14)); display: grid; place-items: center; position: relative; }
+.case-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.case-body { padding: 40px; }
+.case-body h3 { font-size: 1.5rem; margin-bottom: 8px; letter-spacing: -0.02em; }
+.case-body .client { color: var(--text-3); font-size: 0.9rem; margin-bottom: 18px; display: block; font-weight: 600; }
+.case-sec { margin-bottom: 14px; }
+.case-sec b { display: block; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent-2); margin-bottom: 4px; }
+.case-sec p { color: var(--text-2); font-size: 0.95rem; }
+
 /* ---------- testimonials ---------- */
 .tst-wrap { position: relative; max-width: 760px; margin: 0 auto; }
 .tst-track { overflow: hidden; border-radius: var(--radius); }
